@@ -50,6 +50,7 @@ public class LoginController {
                         RedirectAttributes attributes, Model model,
                         @PageableDefault(size = 8, sort = {"updateTime"}, direction = Sort.Direction.DESC) Pageable pageable) {
         User user = userService.checkUser(username, password);
+        System.out.println("123");
         if (user != null) {
             user.setPassword(null);
             session.setAttribute("user",user);
